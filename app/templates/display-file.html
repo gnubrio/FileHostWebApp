@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+{% extends "template.html" %}
+
+{% block content %}
+<div class="downloadFileContainer">
+    <div class="downloadFileInformation">
+        <h1 class="idDisplay">{{ uploadId }}</h1>
+        <br />
+        <label class="fileDisplayName">{{ fileName }}</label>
+        <br />
+        <label id="fileSize" class="fileDisplaySize">{{ fileSize }}</label>
+        <script>
+            var fileSize = `{{fileSize | int}}`;
+        </script>
+        <script src="../static/js/fileSize.js"></script>
+    </div>
+    <div class="fileButtonContainer">
+        <a class="button" href="../{{ path }}/{{ fileName }}" download="{{ fileName }}" target="_blank">Download</a>
+        <a class="button" onclick="copyURL()">Copy Link</a>
+        <script src="../static/js/getCurrentLink.js"></script>
+    </div>
+</div>
+{% endblock %}

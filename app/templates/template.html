@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" >
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Temporary File Upload</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    </head>
+    <body>
+        <div class="wrapper">
+            <div class="content">
+                <header>
+                    <div class="container">
+                        <h1 id="logo">Temporary File Upload</h1>
+                        <nav class="menu">
+                            <div class="header-buttons">
+                                <a href="/" class="headerButton">Home</a>
+                                <a href="/about" class="headerButton">About</a>
+                            </div>
+                        </nav>
+                    </div>
+                </header>
+                {% block content %}
+                {% endblock %}
+            </div>
+            <footer class="container">
+                © 2025 My Website
+            </footer>
+        </div>
+    </body>
+</html>

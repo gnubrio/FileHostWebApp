@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+{% extends "template.html" %}
+
+{% block content %}
+<div class="fileUploadContainer">
+    <div class="fileUploadInformation">
+        <h1 class="title">Upload</h1>
+        <p class="uploadInformation">File can have a maximum size of 16MB and will be deleted after 10 minutes.</p>
+    </div>
+    <div class="fileUploadButton">
+        <form id="fileForm" action="/upload" method="post" enctype="multipart/form-data">
+            <label class="selectFileLabel" for="file">Select File</label>
+            <input type="file" name="file" id="file" />
+            <button type="submit" class="uploadButton">Submit</button>
+        </form>
+        <script src="../static/js/form.js"></script>
+    </div>
+</div>
+<div class="searchIdContainer">
+    <p>Find uploaded file</p>
+    <form id="searchBarForm" action="/search" method="GET">
+        <div class="searchBarContainer">
+            <input type="search" name="query" placeholder="Search..." class="fileSearchBar">
+            <button class="searchSubmitButton" type="submit">
+                <i name="search-icon" class="material-icons" style="font-size:16px;">search</i>
+            </button>
+        </div>
+    </form>
+</div>
+{% endblock %}
